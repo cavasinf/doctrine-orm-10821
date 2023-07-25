@@ -19,10 +19,10 @@ class UserController extends AbstractController
     {
         /** @var UserRepository $userRepository */
         $userRepository = $entityManager->getRepository(User::class);
-//        $tiers = $userRepository->paginate($formFilter->getData(), $page);
+        $users = $userRepository->filterQb()->getQuery()->getResult();
 
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->filterQb(['fullName' => 'test']),
+            'users' => $users,
         ]);
     }
 
