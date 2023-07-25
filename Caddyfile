@@ -1,0 +1,4 @@
+allsoftdocker.allsoftware.lan, allsoftdocker {
+    reverse_proxy http://apache:80
+    tls internal
+}
